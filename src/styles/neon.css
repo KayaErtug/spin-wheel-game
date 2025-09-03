@@ -1,0 +1,89 @@
+@keyframes dataFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes matrixRain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes holographicShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes neonPulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+    text-shadow: 0 0 10px currentColor;
+  }
+  50% { 
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+    text-shadow: 0 0 20px currentColor;
+  }
+}
+
+@keyframes circuitGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.neon-text {
+  color: #00BFFF;
+  text-shadow: 
+    0 0 5px #00BFFF,
+    0 0 10px #00BFFF,
+    0 0 20px #00BFFF,
+    0 0 40px #00BFFF;
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+.cyber-border {
+  border: 2px solid #00BFFF;
+  box-shadow: 
+    0 0 10px #00BFFF,
+    inset 0 0 10px rgba(0, 191, 255, 0.1);
+}
+
+.holographic-bg {
+  background: linear-gradient(45deg, #FF6B35, #00BFFF, #9D4EDD, #FF6B35);
+  background-size: 400% 400%;
+  animation: holographicShimmer 3s ease infinite;
+}
+
+.matrix-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-bg::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 200%;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 191, 255, 0.1) 2px,
+      rgba(0, 191, 255, 0.1) 4px
+    );
+  animation: matrixRain 4s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+.circuit-pattern {
+  background-image: 
+    radial-gradient(circle at 2px 2px, #00BFFF 1px, transparent 1px),
+    linear-gradient(90deg, transparent 49%, #00BFFF 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, #9D4EDD 50%, transparent 51%);
+  background-size: 20px 20px, 40px 40px, 40px 40px;
+  animation: circuitGlow 3s ease-in-out infinite;
+}
